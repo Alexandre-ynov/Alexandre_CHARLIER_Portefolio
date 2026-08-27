@@ -11,7 +11,7 @@
             <span>•</span>
             <span><?= htmlspecialchars($article['date']) ?></span>
             <span>•</span>
-            <span>⏱️ Temps de lecture : <?= htmlspecialchars($article['read_time']) ?></span>
+            <span>⏱️ Temps de lecture : 15 min</span>
         </div>
 
         <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100 mb-4 leading-tight">
