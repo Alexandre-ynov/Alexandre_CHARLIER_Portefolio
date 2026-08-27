@@ -56,8 +56,12 @@ function capturePage(callable $action, string $activeRoute): string {
     $content = str_replace('href="/about"', 'href="about.html"', $content);
     $content = str_replace('href="/contact"', 'href="contact.html"', $content);
     $content = str_replace('href="/styleguide"', 'href="styleguide.html"', $content);
-    $content = str_replace('href="/"', 'href="index.html"', $content);
     $content = preg_replace('/href="\/blog\/([a-zA-Z0-9\-]+)"/', 'href="blog-$1.html"', $content);
+    $content = str_replace('href="/"', 'href="index.html"', $content);
+
+    // Convertir tous les chemins absolus restants (CSS, JS, images, PDF) en chemins relatifs
+    $content = str_replace('href="/', 'href="./', $content);
+    $content = str_replace('src="/', 'src="./', $content);
 
     return $content;
 }
