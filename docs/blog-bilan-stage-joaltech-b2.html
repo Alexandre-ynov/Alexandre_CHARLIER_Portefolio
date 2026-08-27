@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilan de mon stage de Bachelor 2 chez JOALTECH : Data Engineering pour Wikimédia | Alexandre CHARLIER</title>
+    <meta name="description" content="Portfolio d&#039;Alexandre Charlier - Étudiant en 3ème année de Bachelor Informatique à Ynov Aix-en-Provence, futur Master Data &amp; IA.">
+    <meta name="author" content="Alexandre Charlier">
+    
+    <!-- Polices Google Fonts (Inter & JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Devicon (Logos et icônes officielles des technologies) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
+    
+    <!-- Tailwind CSS (via CDN avec configuration unifiée) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            950: '#030712',
+                            900: '#0F172A',
+                            800: '#1E293B',
+                        },
+                        emerald: {
+                            400: '#10B981',
+                            500: '#059669',
+                        },
+                        indigo: {
+                            400: '#818CF8',
+                            600: '#4F46E5',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Fichier CSS custom avec composants du Design System -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-emerald-500/30 selection:text-emerald-300">
+    <!-- Navbar globale -->
+    <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Brand / Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="w-3 h-3 rounded-full bg-emerald-400 group-hover:scale-125 transition-transform duration-200"></span>
+                <span class="font-bold text-lg text-slate-100 group-hover:text-emerald-400 transition-colors">
+                    Alexandre <span class="text-slate-400 font-mono text-sm">CHARLIER</span>
+                </span>
+            </a>
+
+            <!-- Navigation Desktop -->
+            <nav class="hidden md:flex items-center gap-6">
+                                                        <a href="index.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Accueil                    </a>
+                                                        <a href="projects.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Projets                    </a>
+                                                        <a href="skills.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Compétences                    </a>
+                                                        <a href="blog.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-emerald-400 font-semibold border-b-2 border-emerald-400 pb-1">
+                        Blog                    </a>
+                                                        <a href="about.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        À Propos                    </a>
+                                                        <a href="contact.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Contact                    </a>
+                                                        <a href="styleguide.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Charte graphique                    </a>
+                            </nav>
+
+            <!-- Action CV -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="/CV_Alexandre_Charlier_2026.pdf" target="_blank" class="btn-primary text-xs py-2 px-4">
+                    📄 Mon CV PDF
+                </a>
+            </div>
+
+            <!-- Hamburger Button Mobile -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-900">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+                                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Accueil            </a>
+                                <a href="projects.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Projets            </a>
+                                <a href="skills.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Compétences            </a>
+                                <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium bg-slate-800 text-emerald-400">
+                Blog            </a>
+                                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                À Propos            </a>
+                                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Contact            </a>
+                                <a href="styleguide.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Charte graphique            </a>
+                <a href="/CV_Alexandre_Charlier_2026.pdf" target="_blank" class="block text-center btn-primary text-sm py-2 mt-4">
+            📄 Télécharger mon CV (PDF)
+        </a>
+    </div>
+</header>
+
+    <!-- Contenu dynamique de la page -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <article class="py-8 max-w-3xl mx-auto">
+    <!-- Fil d'ariane -->
+    <a href="blog.html" class="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 hover:underline mb-6">
+        ← Retour aux articles
+    </a>
+
+    <!-- En-tête de l'article -->
+    <header class="mb-8 border-b border-slate-800 pb-6">
+        <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-400 mb-3">
+            <span class="text-emerald-400">Alexandre CHARLIER</span>
+            <span>•</span>
+            <span>2026-08-27</span>
+            <span>•</span>
+            <span>⏱️ Temps de lecture : 5 min</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100 mb-4 leading-tight">
+            Bilan de mon stage de Bachelor 2 chez JOALTECH : Data Engineering pour Wikimédia        </h1>
+
+        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="blog-tag">Stage B2</span>
+                            <span class="blog-tag">Data Engineering</span>
+                            <span class="blog-tag">Python</span>
+                            <span class="blog-tag">Spark</span>
+                            <span class="blog-tag">Kafka</span>
+                            <span class="blog-tag">Docker</span>
+                    </div>
+    </header>
+
+    <!-- Contenu HTML rendu du Markdown -->
+    <div class="prose prose-invert max-w-none text-slate-300 leading-relaxed font-sans">
+        <p class="text-slate-300 leading-relaxed mb-4">Dans le cadre de ma deuxième année de Bachelor Informatique (B2), j'ai eu l'opportunité d'effectuer un stage de fin d'année particulièrement formateur au sein de la société <strong class="text-emerald-300 font-semibold">JOALTECH</strong>. À l'aube de ma spécialisation en Data Science & IA, cette expérience m'a plongé au cœur des problématiques réelles d'ingénierie de la donnée à grande échelle.</p>
+<p class="text-slate-300 leading-relaxed mb-4">Ce blog retrace mon parcours, de la découverte du métier à la résolution de problématiques de production complexes.</p>
+<h2 class="text-2xl font-bold text-emerald-400 mt-8 mb-4 border-b border-slate-800 pb-2">1. Cadre général de mon expérience</h2>
+<h3 class="text-xl font-bold text-slate-100 mt-6 mb-3">L'entreprise JOALTECH et son marché</h3>
+JOALTECH est une Société par Actions Simplifiée à Associé Unique (SASU) dirigée par <strong class="text-emerald-300 font-semibold">Monsieur Joseph Allemandou</strong>. Basée à <strong class="text-emerald-300 font-semibold">Plabennec (Bretagne)</strong>, l'entreprise évolue dans le secteur du <strong class="text-emerald-300 font-semibold">conseil en systèmes et logiciels informatiques</strong>. Son marché principal s'articule autour de l'expertise en ingénierie de la donnée. Son client majeur est la célèbre <strong class="text-emerald-300 font-semibold">Wikimedia Foundation</strong> (l'organisation derrière Wikipédia). Par ailleurs, Monsieur Allemandou partage son expertise en donnant des cours d'informatique à l'école d'ingénieurs <strong class="text-emerald-300 font-semibold">ENSTA Bretagne</strong>.
+<h3 class="text-xl font-bold text-slate-100 mt-6 mb-3">Déroulement et organisation du stage</h3>
+Le stage s'est déroulé sur une durée de <strong class="text-emerald-300 font-semibold">5 semaines</strong>, du <strong class="text-emerald-300 font-semibold">22 juin au 24 juillet 2026</strong>. 
+<li class="ml-4 list-disc text-slate-300 mb-1"><strong class="text-emerald-300 font-semibold">1ère semaine en présentiel :</strong> Immersion totale en Bretagne pour observer les méthodes de travail, participer aux réunions et découvrir mon environnement de travail.</li>
+<li class="ml-4 list-disc text-slate-300 mb-1"><strong class="text-emerald-300 font-semibold">4 semaines en distanciel :</strong> Nous avons adopté une méthodologie agile avec une <strong class="text-emerald-300 font-semibold">réunion quotidienne de synchronisation à 10h00</strong>, complétée par un espace de discussion asynchrone sur Google Chat pour une communication fluide. J'ai été directement rattaché à Joseph Allemandou, ce qui m'a garanti un suivi de proximité tout en me responsabilisant. J'ai également eu l'occasion d'interagir indirectement avec des membres de l'équipe SRE Data Engineering de Wikimédia (comme Gabriele Modena).</li>
+<h2 class="text-2xl font-bold text-emerald-400 mt-8 mb-4 border-b border-slate-800 pb-2">2. Ma mission et les compétences mises en œuvre</h2>
+<p class="text-slate-300 leading-relaxed mb-4">L'objectif principal de mon stage était la modernisation d'une architecture Lambda d'ingestion de données (faisant le pont entre les données stream et batch de Wikimédia).</p>
+<p class="text-slate-300 leading-relaxed mb-4"><strong class="text-emerald-300 font-semibold">Le défi :</strong> L'ancien système reposait sur Apache Goblin, un outil obsolète depuis août 2023 et devenu trop lourd pour leurs besoins actuels.<br />
+<strong class="text-emerald-300 font-semibold">Ma tâche :</strong> Remplacer Goblin par <strong class="text-emerald-300 font-semibold">Apache Spark</strong> et l'intégrer à l'architecture existante avec <strong class="text-emerald-300 font-semibold">Apache Kafka</strong>.</p>
+<h3 class="text-xl font-bold text-slate-100 mt-6 mb-3">Outils et technologies exploités</h3>
+Pour mener à bien cette mission, j'ai dû me former et utiliser un ensemble de technologies avancées (Big Data) :
+<li class="ml-4 list-disc text-slate-300 mb-1"><strong class="text-emerald-300 font-semibold">Apache Kafka</strong> (pour la file de messages et le streaming)</li>
+<li class="ml-4 list-disc text-slate-300 mb-1"><strong class="text-emerald-300 font-semibold">Apache Spark / PySpark</strong> (pour le traitement distribué des données par lot/batch)</li>
+<li class="ml-4 list-disc text-slate-300 mb-1"><strong class="text-emerald-300 font-semibold">Docker</strong> (pour la création des environnements et l'isolation réseau des brokers)</li>
+<li class="ml-4 list-disc text-slate-300 mb-1">Sensibilisation aux technologies de l'écosystème comme Hadoop, Flink ou Airflow.</li>
+<h3 class="text-xl font-bold text-slate-100 mt-6 mb-3">Autonomie, investigation et résolution de problèmes</h3>
+L'un des moments forts du stage a été ma confrontation à un problème de blocage sur l'environnement Kafka. Le flux de données (pipeline.py) ne parvenait pas à lire les informations, bloquant mon consumer Python.
+<p class="text-slate-300 leading-relaxed mb-4"><em class="text-slate-300">Comment ai-je fait preuve d'autonomie et de curiosité ?</em><br />
+Face à ce silence de l'application, j'ai isolé le script de production, exécuté des tests en ligne de commande Docker et plongé dans les logs profonds du broker Kafka. J'ai découvert que l'erreur silencieuse provenait du facteur de réplication : `INVALID_REPLICATION_FACTOR`.</p>
+<p class="text-slate-300 leading-relaxed mb-4">L'architecture locale ne disposant que d'un seul nœud (broker) avec le protocole KRaft, Kafka refusait de valider l'écriture par sécurité (qui exige 3 nœuds par défaut). J'ai fait preuve de créativité et d'initiative en détruisant le conteneur défaillant, puis en réécrivant le fichier `docker-compose` pour forcer le mode "Standalone" (`KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1`). Résultat : le système s'est débloqué et a pu ingérer le flux par lots de 200 messages parfaitement formatés.</p>
+<p class="text-slate-300 leading-relaxed mb-4"><em class="text-slate-300">👉 Vous pouvez retrouver le code de mon projet sur ce dépôt : <a href="https://github.com/Alexandre-ynov/kafka-spark-batch-pipeline" target="_blank" class="text-emerald-400 hover:underline font-medium">kafka-spark-batch-pipeline</a></em></p>
+<h2 class="text-2xl font-bold text-emerald-400 mt-8 mb-4 border-b border-slate-800 pb-2">3. Bilan personnel</h2>
+<h3 class="text-xl font-bold text-slate-100 mt-6 mb-3">Ressenti et progression</h3>
+Ce stage a été une expérience technique extrêmement stimulante. Il m'a permis de démystifier les infrastructures Big Data de niveau mondial (comme celle de Wikimédia) et de comprendre l'exigence du métier de Data Engineer. J'ai énormément progressé sur ma maîtrise de la conteneurisation Docker, la compréhension de l'architecture Lambda, et surtout, sur le "Debug" de systèmes distribués complexes.
+<h3 class="text-xl font-bold text-slate-100 mt-6 mb-3">Forces et faiblesses</h3>
+Cette mission a mis en évidence une faiblesse initiale : mon manque d'expérience pratique sur des outils très spécifiques (Kafka, KRaft) dont la configuration est exigeante. Cependant, elle a surtout révélé mes principales forces : <strong class="text-emerald-300 font-semibold">mon esprit d'analyse et ma persévérance</strong>. Face aux bugs, mon approche méthodique (isolation des processus, vérification des buffers, analyse des logs d'erreurs) m'a permis d'apporter des solutions concrètes et autonomes.
+<h2 class="text-2xl font-bold text-emerald-400 mt-8 mb-4 border-b border-slate-800 pb-2">Conclusion : Impact sur mon projet professionnel</h2>
+<p class="text-slate-300 leading-relaxed mb-4">Mon immersion chez <a href="http://joaltech.com" target="_blank" class="text-emerald-400 hover:underline font-medium">JOALTECH</a> a été un véritable catalyseur. Ce stage confirme de manière très concrète ma volonté de m'orienter vers la <strong class="text-emerald-300 font-semibold">Data Science et l'Intelligence Artificielle</strong>. J'aborde ainsi mon Bachelor 3, avec la majeure IA & Data, avec une motivation décuplée. Comprendre les fondations de l'ingénierie des données (le nettoyage, l'ingestion, le pipeline) est un prérequis fondamental pour devenir un excellent ingénieur Data/IA. Fort de cette réussite, je suis désormais prêt et impatient de rechercher ma future alternance !</p>    </div>
+
+    <!-- Pied de l'article -->
+    <footer class="mt-12 pt-6 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400">
+        <a href="blog.html" class="text-emerald-400 hover:underline">← Tous les articles</a>
+        <a href="mailto:alexandrecharlier94@gmail.com" class="hover:text-slate-100">Discuter de cet article avec Alexandre</a>
+    </footer>
+</article>
+    </main>
+
+    <!-- Footer global -->
+    <footer class="mt-auto bg-slate-950 border-t border-slate-800/80 py-12 text-slate-400 text-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <!-- Col 1: Bio -->
+            <div>
+                <h4 class="text-slate-100 font-bold mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    Alexandre CHARLIER
+                </h4>
+                <p class="text-xs leading-relaxed text-slate-400">
+                    Étudiant en Bachelor Informatique chez <strong>Ynov Aix-en-Provence</strong>, futur Master Data Science & Intelligence Artificielle. Passionné par le développement, les algorithmes et l'analyse de données.
+                </p>
+            </div>
+
+            <!-- Col 2: Navigation rapide -->
+            <div>
+                <h4 class="text-slate-100 font-bold mb-3">Navigation</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Accueil</a></li>
+                    <li><a href="projects.html" class="hover:text-emerald-400 transition-colors">Projets GitHub</a></li>
+                    <li><a href="blog.html" class="hover:text-emerald-400 transition-colors">Blog & Articles</a></li>
+                    <li><a href="about.html" class="hover:text-emerald-400 transition-colors">À Propos & Cursus</a></li>
+                    <li><a href="contact.html" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Contact & Liens -->
+            <div>
+                <h4 class="text-slate-100 font-bold mb-3">Contact & Liens</h4>
+                <ul class="space-y-2 text-xs">
+                    <li>📧 <a href="mailto:alexandrecharlier94@gmail.com" class="hover:text-emerald-400 transition-colors">alexandrecharlier94@gmail.com</a></li>
+                    <li>📍 <span>Lançon-Provence (13680)</span></li>
+                    <li>🐙 <a href="https://github.com/Alexandre-ynov" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors">GitHub (Alexandre-ynov)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-slate-900 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500">
+            <p>© 2026 Alexandre Charlier. Tous droits réservés.</p>
+            <p class="mt-2 md:mt-0 font-mono">Conçu en PHP MVC Native & Tailwind CSS (Option B Minimalist)</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- JS principal -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

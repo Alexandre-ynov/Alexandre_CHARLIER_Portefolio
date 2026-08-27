@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil | Alexandre CHARLIER</title>
+    <meta name="description" content="Portfolio d&#039;Alexandre Charlier - Étudiant en 3ème année de Bachelor Informatique à Ynov Aix-en-Provence, futur Master Data &amp; IA.">
+    <meta name="author" content="Alexandre Charlier">
+    
+    <!-- Polices Google Fonts (Inter & JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Devicon (Logos et icônes officielles des technologies) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
+    
+    <!-- Tailwind CSS (via CDN avec configuration unifiée) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            950: '#030712',
+                            900: '#0F172A',
+                            800: '#1E293B',
+                        },
+                        emerald: {
+                            400: '#10B981',
+                            500: '#059669',
+                        },
+                        indigo: {
+                            400: '#818CF8',
+                            600: '#4F46E5',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Fichier CSS custom avec composants du Design System -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-emerald-500/30 selection:text-emerald-300">
+    <!-- Navbar globale -->
+    <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Brand / Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="w-3 h-3 rounded-full bg-emerald-400 group-hover:scale-125 transition-transform duration-200"></span>
+                <span class="font-bold text-lg text-slate-100 group-hover:text-emerald-400 transition-colors">
+                    Alexandre <span class="text-slate-400 font-mono text-sm">CHARLIER</span>
+                </span>
+            </a>
+
+            <!-- Navigation Desktop -->
+            <nav class="hidden md:flex items-center gap-6">
+                                                        <a href="index.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-emerald-400 font-semibold border-b-2 border-emerald-400 pb-1">
+                        Accueil                    </a>
+                                                        <a href="projects.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Projets                    </a>
+                                                        <a href="skills.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Compétences                    </a>
+                                                        <a href="blog.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Blog                    </a>
+                                                        <a href="about.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        À Propos                    </a>
+                                                        <a href="contact.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Contact                    </a>
+                                                        <a href="styleguide.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Charte graphique                    </a>
+                            </nav>
+
+            <!-- Action CV -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="/CV_Alexandre_Charlier_2026.pdf" target="_blank" class="btn-primary text-xs py-2 px-4">
+                    📄 Mon CV PDF
+                </a>
+            </div>
+
+            <!-- Hamburger Button Mobile -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-900">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+                                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium bg-slate-800 text-emerald-400">
+                Accueil            </a>
+                                <a href="projects.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Projets            </a>
+                                <a href="skills.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Compétences            </a>
+                                <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Blog            </a>
+                                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                À Propos            </a>
+                                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Contact            </a>
+                                <a href="styleguide.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Charte graphique            </a>
+                <a href="/CV_Alexandre_Charlier_2026.pdf" target="_blank" class="block text-center btn-primary text-sm py-2 mt-4">
+            📄 Télécharger mon CV (PDF)
+        </a>
+    </div>
+</header>
+
+    <!-- Contenu dynamique de la page -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <!-- Section Hero -->
+<section class="py-12 md:py-20 border-b border-slate-900">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <!-- Textes -->
+        <div class="md:col-span-8 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-800/50 text-emerald-400 font-mono text-xs font-medium">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                En recherche d&#039;un Stage et d&#039;une Alternance (Data &amp; IA)            </div>
+
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-100 leading-tight">
+                Bonjour, je suis <span class="text-emerald-400">Alexandre CHARLIER</span>
+            </h1>
+
+            <p class="text-lg text-slate-300 leading-relaxed">
+                Je suis en 3e année de Bachelor informatique dans la majeure IA et Data pour intégrer par la suite un cycle de master chez Ynov Aix-en-Provence. L&#039;IA et la Data sont omniprésentes de nos jours et sont utilisées dans une multitude de sujets aussi différents qu&#039;intéressants. D&#039;un naturel curieux, j&#039;ai appris à m&#039;organiser et faire preuve de discipline durant mes études, une philosophie que j&#039;applique au quotidien.            </p>
+
+            <div class="flex flex-wrap gap-4 pt-4">
+                <a href="projects.html" class="btn-primary">
+                    🚀 Découvrir mes Projets
+                </a>
+                <a href="/CV_Alexandre_Charlier_2026.pdf" target="_blank" class="btn-secondary">
+                    📄 Voir mon CV (PDF)
+                </a>
+                <a href="contact.html" class="btn-secondary">
+                    ✉️ Me Contacter
+                </a>
+            </div>
+        </div>
+
+        <!-- Profil Card / Badge -->
+        <div class="md:col-span-4">
+            <div class="glass-card text-center space-y-4 relative overflow-hidden">
+                <div class="w-28 h-28 mx-auto rounded-full bg-slate-800 border-2 border-emerald-400/80 p-1 shadow-lg overflow-hidden">
+                    <!-- Photo par défaut ou du CV -->
+                    <img src="/images/maPhoto.jpg" 
+                         alt="Alexandre Charlier" 
+                         class="w-full h-full object-cover rounded-full">
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-100 text-lg">Alexandre Charlier</h3>
+                    <p class="text-xs text-emerald-400 font-mono">Ynov Aix-en-Provence</p>
+                </div>
+                <div class="text-xs text-slate-400 space-y-1 font-mono pt-2 border-t border-slate-800">
+                    <p>🎓 Bachelor 2ème année</p>
+                    <p>🔮 Majeure IA & Data Science</p>
+                    <p>📍 Lançon-Provence (13)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section Projets à la Une (Direct GitHub) -->
+<section class="py-16 border-b border-slate-900">
+    <div class="flex items-center justify-between mb-8">
+        <div>
+            <h2 class="text-2xl font-bold text-slate-100">Projets & Réalisations</h2>
+            <p class="text-sm text-slate-400 font-mono">Sélection de projets récents • Cliquez pour ouvrir le code sur GitHub</p>
+        </div>
+        <a href="projects.html" class="text-sm font-mono text-emerald-400 hover:underline hidden sm:block">
+            Voir tous les projets (3) →
+        </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="https://github.com/Alexandre-ynov/kafka-spark-batch-pipeline" 
+   target="_blank" 
+   rel="noopener" 
+   class="glass-card group block overflow-hidden">
+    <!-- Vignette / Photo de projet -->
+    <div class="aspect-video w-full overflow-hidden rounded-lg bg-slate-800 mb-5 relative">
+        <img src="/images/kafka_spark_pipeline.png" 
+             alt="Pipeline Ingestion Batch Distribuée (Kafka &amp; Spark)" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        
+        <!-- Overlay GitHub au survol -->
+        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-emerald-400 font-mono text-sm font-semibold">
+            <span>Voir le code sur GitHub</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Catégorie & Date -->
+    <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs text-slate-400 font-mono mb-2">
+        <span class="text-emerald-400 font-medium">Data Engineering &amp; Big Data</span>
+        <span>2026</span>
+    </div>
+
+    <!-- Titre -->
+    <h3 class="text-xl font-bold text-slate-100 group-hover:text-emerald-400 transition-colors flex items-center justify-between gap-2 mb-2">
+        <span>Pipeline Ingestion Batch Distribuée (Kafka &amp; Spark)</span>
+    </h3>
+
+    <!-- Description -->
+    <p class="text-sm text-slate-400 leading-relaxed line-clamp-3 mb-4">
+        Conception d&#039;un pipeline Big Data distribué en Python (PySpark &amp; Confluent-Kafka). Calcul déterministe des offsets sans cache, tolérance aux pannes, stockage partitionné et collecte de métriques d&#039;observabilité en temps réel.    </p>
+
+    <!-- Badges de technologies -->
+    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                    <span class="tech-badge">PySpark</span>
+                    <span class="tech-badge">Apache Kafka</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">Big Data</span>
+                    <span class="tech-badge">Python</span>
+            </div>
+</a>
+                    <a href="https://github.com/7n4xt/Fil-rouge-b2" 
+   target="_blank" 
+   rel="noopener" 
+   class="glass-card group block overflow-hidden">
+    <!-- Vignette / Photo de projet -->
+    <div class="aspect-video w-full overflow-hidden rounded-lg bg-slate-800 mb-5 relative">
+        <img src="/images/Projet_Fil_Rouge_B2.png" 
+             alt="Plateforme Immobilière Fil Rouge MVC" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        
+        <!-- Overlay GitHub au survol -->
+        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-emerald-400 font-mono text-sm font-semibold">
+            <span>Voir le code sur GitHub</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Catégorie & Date -->
+    <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs text-slate-400 font-mono mb-2">
+        <span class="text-emerald-400 font-medium">Web Application &amp; MVC</span>
+        <span>2026</span>
+    </div>
+
+    <!-- Titre -->
+    <h3 class="text-xl font-bold text-slate-100 group-hover:text-emerald-400 transition-colors flex items-center justify-between gap-2 mb-2">
+        <span>Plateforme Immobilière Fil Rouge MVC</span>
+    </h3>
+
+    <!-- Description -->
+    <p class="text-sm text-slate-400 leading-relaxed line-clamp-3 mb-4">
+        Application web d&#039;agence immobilière développée en PHP MVC natif. Gestion des rôles (Utilisateurs, Agents, Administrateurs), catalogue de biens avec filtres/pagination et requêtes SQL préparées sécurisées.    </p>
+
+    <!-- Badges de technologies -->
+    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                    <span class="tech-badge">PHP MVC</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">Architecture</span>
+                    <span class="tech-badge">Sécurité</span>
+                    <span class="tech-badge">Projet Fil Rouge</span>
+            </div>
+</a>
+                    <a href="https://github.com/Alexandre-ynov/Reservation_Cinema_PHP_B2" 
+   target="_blank" 
+   rel="noopener" 
+   class="glass-card group block overflow-hidden">
+    <!-- Vignette / Photo de projet -->
+    <div class="aspect-video w-full overflow-hidden rounded-lg bg-slate-800 mb-5 relative">
+        <img src="/images/Reservation_Cinema_PHP_B2.png" 
+             alt="Plateforme de Réservation de Cinéma PHP" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        
+        <!-- Overlay GitHub au survol -->
+        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-emerald-400 font-mono text-sm font-semibold">
+            <span>Voir le code sur GitHub</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Catégorie & Date -->
+    <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs text-slate-400 font-mono mb-2">
+        <span class="text-emerald-400 font-medium">Développement Web PHP</span>
+        <span>2026</span>
+    </div>
+
+    <!-- Titre -->
+    <h3 class="text-xl font-bold text-slate-100 group-hover:text-emerald-400 transition-colors flex items-center justify-between gap-2 mb-2">
+        <span>Plateforme de Réservation de Cinéma PHP</span>
+    </h3>
+
+    <!-- Description -->
+    <p class="text-sm text-slate-400 leading-relaxed line-clamp-3 mb-4">
+        Développement d&#039;une application web MVC de réservation de places de cinéma inspirée de Pathé. Module complet de gestion des détails de films, réservation de séances, administration et gestion de base de données MySQL.    </p>
+
+    <!-- Badges de technologies -->
+    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                    <span class="tech-badge">PHP</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">MVC</span>
+                    <span class="tech-badge">HTML5/CSS3</span>
+                    <span class="tech-badge">Projet B2</span>
+            </div>
+</a>
+            </div>
+</section>
+
+<!-- Section Grille de Compétences -->
+<section class="py-16 border-b border-slate-900">
+    <h2 class="text-2xl font-bold text-slate-100 mb-2">Compétences Techniques</h2>
+    <p class="text-sm text-slate-400 font-mono mb-8">Technologies et outils maîtrisés au cours de mes études chez Ynov et de mes projets</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="space-y-3">
+                <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider font-mono border-b border-slate-800 pb-2">
+                    Langages &amp; Web                </h3>
+                <div class="space-y-2">
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-python-plain colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">Python</h4>
+            <span class="text-xs text-slate-400 font-mono">Avancé</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">Principal</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-csharp-plain colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">C#</h4>
+            <span class="text-xs text-slate-400 font-mono">Intermédiaire</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">POO</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-php-plain colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">PHP (MVC)</h4>
+            <span class="text-xs text-slate-400 font-mono">Intermédiaire</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">Backend</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-vuejs-plain colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">Vue.js</h4>
+            <span class="text-xs text-slate-400 font-mono">Intermédiaire</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">Frontend</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-tailwindcss-original colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">Tailwind CSS</h4>
+            <span class="text-xs text-slate-400 font-mono">Avancé</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">Design System</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-html5-plain colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">HTML5 / CSS3</h4>
+            <span class="text-xs text-slate-400 font-mono">Avancé</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">Web</span>
+</div>
+                                    </div>
+            </div>
+                    <div class="space-y-3">
+                <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider font-mono border-b border-slate-800 pb-2">
+                    Data Science &amp; Big Data                </h3>
+                <div class="space-y-2">
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-mysql-plain colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">SQL &amp; MySQL</h4>
+            <span class="text-xs text-slate-400 font-mono">Avancé</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">BDD</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-jupyter-plain colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">Jupyter Notebook</h4>
+            <span class="text-xs text-slate-400 font-mono">Avancé</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">Analyse</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-pandas-plain colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">Pandas / NumPy</h4>
+            <span class="text-xs text-slate-400 font-mono">Intermédiaire</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">Data Science</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-scikitlearn-line colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">Scikit-Learn</h4>
+            <span class="text-xs text-slate-400 font-mono">En cours</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">Machine Learning</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-apachespark-original colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">Spark</h4>
+            <span class="text-xs text-slate-400 font-mono">Intermédiaire</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">Big Data</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-apachekafka-original colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">Kafka</h4>
+            <span class="text-xs text-slate-400 font-mono">Intermédiaire</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">Streaming</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <span class="text-xl">🏗️</span>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">Design Patterns</h4>
+            <span class="text-xs text-slate-400 font-mono">Pratique</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">Architecture</span>
+</div>
+                                    </div>
+            </div>
+                    <div class="space-y-3">
+                <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider font-mono border-b border-slate-800 pb-2">
+                    Outils &amp; Environnement                </h3>
+                <div class="space-y-2">
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-git-plain colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">GitHub / Git</h4>
+            <span class="text-xs text-slate-400 font-mono">Avancé</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">DevOps</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-vscode-plain colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">VS Code</h4>
+            <span class="text-xs text-slate-400 font-mono">Avancé</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">IDE</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <i class="devicon-docker-plain colored text-2xl"></i>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">Docker</h4>
+            <span class="text-xs text-slate-400 font-mono">Intermédiaire</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">Conteneurs</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <span class="text-xl">📑</span>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">Word / Excel / PPT</h4>
+            <span class="text-xs text-slate-400 font-mono">Expert</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">Bureautique</span>
+</div>
+                                            <div class="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+    <div class="flex items-center gap-3">
+                    <span class="text-xl">💬</span>
+                <div>
+            <h4 class="text-sm font-semibold text-slate-100">Teams / Zoom</h4>
+            <span class="text-xs text-slate-400 font-mono">Avancé</span>
+        </div>
+    </div>
+    <span class="tech-badge text-[10px] whitespace-nowrap">Collaboration</span>
+</div>
+                                    </div>
+            </div>
+            </div>
+</section>
+
+<!-- Section Derniers Articles du Blog -->
+<section class="py-16">
+    <div class="flex items-center justify-between mb-8">
+        <div>
+            <h2 class="text-2xl font-bold text-slate-100">Derniers Articles & Retours d'Expérience</h2>
+            <p class="text-sm text-slate-400 font-mono">Articles rédigés au format Markdown</p>
+        </div>
+        <a href="blog.html" class="text-sm font-mono text-emerald-400 hover:underline hidden sm:block">
+            Voir le blog complet →
+        </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="blog-bilan-stage-joaltech-b2.html" class="glass-card group block">
+    <div class="flex flex-wrap items-center justify-between gap-y-2 text-xs text-slate-400 font-mono mb-3">
+        <div class="flex flex-wrap items-center gap-2">
+                            <span class="blog-tag">Stage B2</span>
+                            <span class="blog-tag">Data Engineering</span>
+                            <span class="blog-tag">Python</span>
+                            <span class="blog-tag">Spark</span>
+                            <span class="blog-tag">Kafka</span>
+                            <span class="blog-tag">Docker</span>
+                    </div>
+        <span>5 min • 2026-08-27</span>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-100 group-hover:text-emerald-400 transition-colors mb-3">
+        Bilan de mon stage de Bachelor 2 chez JOALTECH : Data Engineering pour Wikimédia    </h3>
+
+    <p class="text-sm text-slate-400 leading-relaxed line-clamp-3 mb-4">
+        Retour d&#039;expérience sur mes 5 semaines de stage chez JOALTECH. Au programme : migration d&#039;une architecture d&#039;ingestion de données de Goblin vers Spark pour la Wikimedia Foundation.    </p>
+
+    <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 group-hover:translate-x-1 transition-transform duration-200">
+        <span>Lire l'article complet</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+    </div>
+</a>
+            </div>
+</section>
+    </main>
+
+    <!-- Footer global -->
+    <footer class="mt-auto bg-slate-950 border-t border-slate-800/80 py-12 text-slate-400 text-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <!-- Col 1: Bio -->
+            <div>
+                <h4 class="text-slate-100 font-bold mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    Alexandre CHARLIER
+                </h4>
+                <p class="text-xs leading-relaxed text-slate-400">
+                    Étudiant en Bachelor Informatique chez <strong>Ynov Aix-en-Provence</strong>, futur Master Data Science & Intelligence Artificielle. Passionné par le développement, les algorithmes et l'analyse de données.
+                </p>
+            </div>
+
+            <!-- Col 2: Navigation rapide -->
+            <div>
+                <h4 class="text-slate-100 font-bold mb-3">Navigation</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Accueil</a></li>
+                    <li><a href="projects.html" class="hover:text-emerald-400 transition-colors">Projets GitHub</a></li>
+                    <li><a href="blog.html" class="hover:text-emerald-400 transition-colors">Blog & Articles</a></li>
+                    <li><a href="about.html" class="hover:text-emerald-400 transition-colors">À Propos & Cursus</a></li>
+                    <li><a href="contact.html" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Contact & Liens -->
+            <div>
+                <h4 class="text-slate-100 font-bold mb-3">Contact & Liens</h4>
+                <ul class="space-y-2 text-xs">
+                    <li>📧 <a href="mailto:alexandrecharlier94@gmail.com" class="hover:text-emerald-400 transition-colors">alexandrecharlier94@gmail.com</a></li>
+                    <li>📍 <span>Lançon-Provence (13680)</span></li>
+                    <li>🐙 <a href="https://github.com/Alexandre-ynov" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors">GitHub (Alexandre-ynov)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-slate-900 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500">
+            <p>© 2026 Alexandre Charlier. Tous droits réservés.</p>
+            <p class="mt-2 md:mt-0 font-mono">Conçu en PHP MVC Native & Tailwind CSS (Option B Minimalist)</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- JS principal -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

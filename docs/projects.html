@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets | Alexandre CHARLIER</title>
+    <meta name="description" content="Portfolio d&#039;Alexandre Charlier - Étudiant en 3ème année de Bachelor Informatique à Ynov Aix-en-Provence, futur Master Data &amp; IA.">
+    <meta name="author" content="Alexandre Charlier">
+    
+    <!-- Polices Google Fonts (Inter & JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Devicon (Logos et icônes officielles des technologies) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
+    
+    <!-- Tailwind CSS (via CDN avec configuration unifiée) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            950: '#030712',
+                            900: '#0F172A',
+                            800: '#1E293B',
+                        },
+                        emerald: {
+                            400: '#10B981',
+                            500: '#059669',
+                        },
+                        indigo: {
+                            400: '#818CF8',
+                            600: '#4F46E5',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Fichier CSS custom avec composants du Design System -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-emerald-500/30 selection:text-emerald-300">
+    <!-- Navbar globale -->
+    <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Brand / Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="w-3 h-3 rounded-full bg-emerald-400 group-hover:scale-125 transition-transform duration-200"></span>
+                <span class="font-bold text-lg text-slate-100 group-hover:text-emerald-400 transition-colors">
+                    Alexandre <span class="text-slate-400 font-mono text-sm">CHARLIER</span>
+                </span>
+            </a>
+
+            <!-- Navigation Desktop -->
+            <nav class="hidden md:flex items-center gap-6">
+                                                        <a href="index.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Accueil                    </a>
+                                                        <a href="projects.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-emerald-400 font-semibold border-b-2 border-emerald-400 pb-1">
+                        Projets                    </a>
+                                                        <a href="skills.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Compétences                    </a>
+                                                        <a href="blog.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Blog                    </a>
+                                                        <a href="about.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        À Propos                    </a>
+                                                        <a href="contact.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Contact                    </a>
+                                                        <a href="styleguide.html" 
+                       class="text-sm font-medium transition-colors duration-200 text-slate-300 hover:text-slate-100">
+                        Charte graphique                    </a>
+                            </nav>
+
+            <!-- Action CV -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="/CV_Alexandre_Charlier_2026.pdf" target="_blank" class="btn-primary text-xs py-2 px-4">
+                    📄 Mon CV PDF
+                </a>
+            </div>
+
+            <!-- Hamburger Button Mobile -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-900">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+                                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Accueil            </a>
+                                <a href="projects.html" class="block px-3 py-2 rounded-md text-base font-medium bg-slate-800 text-emerald-400">
+                Projets            </a>
+                                <a href="skills.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Compétences            </a>
+                                <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Blog            </a>
+                                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                À Propos            </a>
+                                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Contact            </a>
+                                <a href="styleguide.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100">
+                Charte graphique            </a>
+                <a href="/CV_Alexandre_Charlier_2026.pdf" target="_blank" class="block text-center btn-primary text-sm py-2 mt-4">
+            📄 Télécharger mon CV (PDF)
+        </a>
+    </div>
+</header>
+
+    <!-- Contenu dynamique de la page -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <section class="py-8">
+    <div class="mb-10">
+        <h1 class="text-3xl font-extrabold text-slate-100 mb-2">Tous mes Projets</h1>
+        <p class="text-slate-400">
+            Retrouvez l'ensemble de mes travaux académiques, projets personnels et réalisation d'ingénierie. 
+            <span class="text-emerald-400 font-mono text-sm block mt-1">👉 Cliquez sur n'importe quelle carte pour accéder directement au dépôt GitHub.</span>
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="https://github.com/Alexandre-ynov/kafka-spark-batch-pipeline" 
+   target="_blank" 
+   rel="noopener" 
+   class="glass-card group block overflow-hidden">
+    <!-- Vignette / Photo de projet -->
+    <div class="aspect-video w-full overflow-hidden rounded-lg bg-slate-800 mb-5 relative">
+        <img src="/images/kafka_spark_pipeline.png" 
+             alt="Pipeline Ingestion Batch Distribuée (Kafka &amp; Spark)" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        
+        <!-- Overlay GitHub au survol -->
+        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-emerald-400 font-mono text-sm font-semibold">
+            <span>Voir le code sur GitHub</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Catégorie & Date -->
+    <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs text-slate-400 font-mono mb-2">
+        <span class="text-emerald-400 font-medium">Data Engineering &amp; Big Data</span>
+        <span>2026</span>
+    </div>
+
+    <!-- Titre -->
+    <h3 class="text-xl font-bold text-slate-100 group-hover:text-emerald-400 transition-colors flex items-center justify-between gap-2 mb-2">
+        <span>Pipeline Ingestion Batch Distribuée (Kafka &amp; Spark)</span>
+    </h3>
+
+    <!-- Description -->
+    <p class="text-sm text-slate-400 leading-relaxed line-clamp-3 mb-4">
+        Conception d&#039;un pipeline Big Data distribué en Python (PySpark &amp; Confluent-Kafka). Calcul déterministe des offsets sans cache, tolérance aux pannes, stockage partitionné et collecte de métriques d&#039;observabilité en temps réel.    </p>
+
+    <!-- Badges de technologies -->
+    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                    <span class="tech-badge">PySpark</span>
+                    <span class="tech-badge">Apache Kafka</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">Big Data</span>
+                    <span class="tech-badge">Python</span>
+            </div>
+</a>
+                    <a href="https://github.com/7n4xt/Fil-rouge-b2" 
+   target="_blank" 
+   rel="noopener" 
+   class="glass-card group block overflow-hidden">
+    <!-- Vignette / Photo de projet -->
+    <div class="aspect-video w-full overflow-hidden rounded-lg bg-slate-800 mb-5 relative">
+        <img src="/images/Projet_Fil_Rouge_B2.png" 
+             alt="Plateforme Immobilière Fil Rouge MVC" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        
+        <!-- Overlay GitHub au survol -->
+        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-emerald-400 font-mono text-sm font-semibold">
+            <span>Voir le code sur GitHub</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Catégorie & Date -->
+    <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs text-slate-400 font-mono mb-2">
+        <span class="text-emerald-400 font-medium">Web Application &amp; MVC</span>
+        <span>2026</span>
+    </div>
+
+    <!-- Titre -->
+    <h3 class="text-xl font-bold text-slate-100 group-hover:text-emerald-400 transition-colors flex items-center justify-between gap-2 mb-2">
+        <span>Plateforme Immobilière Fil Rouge MVC</span>
+    </h3>
+
+    <!-- Description -->
+    <p class="text-sm text-slate-400 leading-relaxed line-clamp-3 mb-4">
+        Application web d&#039;agence immobilière développée en PHP MVC natif. Gestion des rôles (Utilisateurs, Agents, Administrateurs), catalogue de biens avec filtres/pagination et requêtes SQL préparées sécurisées.    </p>
+
+    <!-- Badges de technologies -->
+    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                    <span class="tech-badge">PHP MVC</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">Architecture</span>
+                    <span class="tech-badge">Sécurité</span>
+                    <span class="tech-badge">Projet Fil Rouge</span>
+            </div>
+</a>
+                    <a href="https://github.com/Alexandre-ynov/Reservation_Cinema_PHP_B2" 
+   target="_blank" 
+   rel="noopener" 
+   class="glass-card group block overflow-hidden">
+    <!-- Vignette / Photo de projet -->
+    <div class="aspect-video w-full overflow-hidden rounded-lg bg-slate-800 mb-5 relative">
+        <img src="/images/Reservation_Cinema_PHP_B2.png" 
+             alt="Plateforme de Réservation de Cinéma PHP" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        
+        <!-- Overlay GitHub au survol -->
+        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-emerald-400 font-mono text-sm font-semibold">
+            <span>Voir le code sur GitHub</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Catégorie & Date -->
+    <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs text-slate-400 font-mono mb-2">
+        <span class="text-emerald-400 font-medium">Développement Web PHP</span>
+        <span>2026</span>
+    </div>
+
+    <!-- Titre -->
+    <h3 class="text-xl font-bold text-slate-100 group-hover:text-emerald-400 transition-colors flex items-center justify-between gap-2 mb-2">
+        <span>Plateforme de Réservation de Cinéma PHP</span>
+    </h3>
+
+    <!-- Description -->
+    <p class="text-sm text-slate-400 leading-relaxed line-clamp-3 mb-4">
+        Développement d&#039;une application web MVC de réservation de places de cinéma inspirée de Pathé. Module complet de gestion des détails de films, réservation de séances, administration et gestion de base de données MySQL.    </p>
+
+    <!-- Badges de technologies -->
+    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                    <span class="tech-badge">PHP</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">MVC</span>
+                    <span class="tech-badge">HTML5/CSS3</span>
+                    <span class="tech-badge">Projet B2</span>
+            </div>
+</a>
+                    <a href="https://github.com/Alexandre-ynov" 
+   target="_blank" 
+   rel="noopener" 
+   class="glass-card group block overflow-hidden">
+    <!-- Vignette / Photo de projet -->
+    <div class="aspect-video w-full overflow-hidden rounded-lg bg-slate-800 mb-5 relative">
+        <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" 
+             alt="Base de Données Magasin &amp; Interface C#" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        
+        <!-- Overlay GitHub au survol -->
+        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-emerald-400 font-mono text-sm font-semibold">
+            <span>Voir le code sur GitHub</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Catégorie & Date -->
+    <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs text-slate-400 font-mono mb-2">
+        <span class="text-emerald-400 font-medium">Database &amp; Software</span>
+        <span>2023</span>
+    </div>
+
+    <!-- Titre -->
+    <h3 class="text-xl font-bold text-slate-100 group-hover:text-emerald-400 transition-colors flex items-center justify-between gap-2 mb-2">
+        <span>Base de Données Magasin &amp; Interface C#</span>
+    </h3>
+
+    <!-- Description -->
+    <p class="text-sm text-slate-400 leading-relaxed line-clamp-3 mb-4">
+        Conception d&#039;une base de données relationnelle MySQL optimisée pour la gestion des stocks, clients et ventes d&#039;un magasin fictif, avec interface graphique développée en C#.    </p>
+
+    <!-- Badges de technologies -->
+    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                    <span class="tech-badge">C#</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">SQL</span>
+                    <span class="tech-badge">Visual Studio</span>
+                    <span class="tech-badge">Architecture MVC</span>
+            </div>
+</a>
+                    <a href="https://github.com/Alexandre-ynov" 
+   target="_blank" 
+   rel="noopener" 
+   class="glass-card group block overflow-hidden">
+    <!-- Vignette / Photo de projet -->
+    <div class="aspect-video w-full overflow-hidden rounded-lg bg-slate-800 mb-5 relative">
+        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&amp;fit=crop&amp;w=800&amp;q=80" 
+             alt="Développement de Jeu en Python" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        
+        <!-- Overlay GitHub au survol -->
+        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-emerald-400 font-mono text-sm font-semibold">
+            <span>Voir le code sur GitHub</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Catégorie & Date -->
+    <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs text-slate-400 font-mono mb-2">
+        <span class="text-emerald-400 font-medium">Python &amp; Algorithmique</span>
+        <span>2017</span>
+    </div>
+
+    <!-- Titre -->
+    <h3 class="text-xl font-bold text-slate-100 group-hover:text-emerald-400 transition-colors flex items-center justify-between gap-2 mb-2">
+        <span>Développement de Jeu en Python</span>
+    </h3>
+
+    <!-- Description -->
+    <p class="text-sm text-slate-400 leading-relaxed line-clamp-3 mb-4">
+        Projet réalisé durant mon stage chez JoAltech Consulting : conception et programmation intégrale d&#039;un jeu interactif en Python, implémentant des boucles de jeu complexes et des algorithmes d&#039;IA simples.    </p>
+
+    <!-- Badges de technologies -->
+    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Algorithmique</span>
+                    <span class="tech-badge">Game Dev</span>
+                    <span class="tech-badge">Stage</span>
+            </div>
+</a>
+                    <a href="https://github.com/Alexandre-ynov" 
+   target="_blank" 
+   rel="noopener" 
+   class="glass-card group block overflow-hidden">
+    <!-- Vignette / Photo de projet -->
+    <div class="aspect-video w-full overflow-hidden rounded-lg bg-slate-800 mb-5 relative">
+        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" 
+             alt="Programmation Robotique ITER Techno-Robot" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        
+        <!-- Overlay GitHub au survol -->
+        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-emerald-400 font-mono text-sm font-semibold">
+            <span>Voir le code sur GitHub</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Catégorie & Date -->
+    <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs text-slate-400 font-mono mb-2">
+        <span class="text-emerald-400 font-medium">Robotique &amp; Systèmes</span>
+        <span>2016</span>
+    </div>
+
+    <!-- Titre -->
+    <h3 class="text-xl font-bold text-slate-100 group-hover:text-emerald-400 transition-colors flex items-center justify-between gap-2 mb-2">
+        <span>Programmation Robotique ITER Techno-Robot</span>
+    </h3>
+
+    <!-- Description -->
+    <p class="text-sm text-slate-400 leading-relaxed line-clamp-3 mb-4">
+        Programmation et simulation d&#039;un robot autonome sur Lego Digital Designer. Projet ayant remporté la 2ème place au concours régional ITER Techno-Robot.    </p>
+
+    <!-- Badges de technologies -->
+    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                    <span class="tech-badge">Robotique</span>
+                    <span class="tech-badge">Lego Digital Designer</span>
+                    <span class="tech-badge">Algorithmique</span>
+                    <span class="tech-badge">Concours</span>
+            </div>
+</a>
+                    <a href="https://github.com/Alexandre-ynov" 
+   target="_blank" 
+   rel="noopener" 
+   class="glass-card group block overflow-hidden">
+    <!-- Vignette / Photo de projet -->
+    <div class="aspect-video w-full overflow-hidden rounded-lg bg-slate-800 mb-5 relative">
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=800&amp;q=80" 
+             alt="Objet Roulant Aéro-poussé (Ingénierie)" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        
+        <!-- Overlay GitHub au survol -->
+        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-emerald-400 font-mono text-sm font-semibold">
+            <span>Voir le code sur GitHub</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Catégorie & Date -->
+    <div class="flex flex-wrap items-center justify-between gap-y-1 text-xs text-slate-400 font-mono mb-2">
+        <span class="text-emerald-400 font-medium">Projet Ingénierie ESILV</span>
+        <span>2022</span>
+    </div>
+
+    <!-- Titre -->
+    <h3 class="text-xl font-bold text-slate-100 group-hover:text-emerald-400 transition-colors flex items-center justify-between gap-2 mb-2">
+        <span>Objet Roulant Aéro-poussé (Ingénierie)</span>
+    </h3>
+
+    <!-- Description -->
+    <p class="text-sm text-slate-400 leading-relaxed line-clamp-3 mb-4">
+        Projet d&#039;imagination et d&#039;exploration technique en 1ère année d&#039;ingénieur : dimensionnement physique et conception mécanique d&#039;un véhicule à propulsion aérodynamique.    </p>
+
+    <!-- Badges de technologies -->
+    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                    <span class="tech-badge">Ingénierie</span>
+                    <span class="tech-badge">Physique</span>
+                    <span class="tech-badge">Modelisation</span>
+                    <span class="tech-badge">ESILV</span>
+            </div>
+</a>
+            </div>
+</section>
+    </main>
+
+    <!-- Footer global -->
+    <footer class="mt-auto bg-slate-950 border-t border-slate-800/80 py-12 text-slate-400 text-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <!-- Col 1: Bio -->
+            <div>
+                <h4 class="text-slate-100 font-bold mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    Alexandre CHARLIER
+                </h4>
+                <p class="text-xs leading-relaxed text-slate-400">
+                    Étudiant en Bachelor Informatique chez <strong>Ynov Aix-en-Provence</strong>, futur Master Data Science & Intelligence Artificielle. Passionné par le développement, les algorithmes et l'analyse de données.
+                </p>
+            </div>
+
+            <!-- Col 2: Navigation rapide -->
+            <div>
+                <h4 class="text-slate-100 font-bold mb-3">Navigation</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Accueil</a></li>
+                    <li><a href="projects.html" class="hover:text-emerald-400 transition-colors">Projets GitHub</a></li>
+                    <li><a href="blog.html" class="hover:text-emerald-400 transition-colors">Blog & Articles</a></li>
+                    <li><a href="about.html" class="hover:text-emerald-400 transition-colors">À Propos & Cursus</a></li>
+                    <li><a href="contact.html" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Contact & Liens -->
+            <div>
+                <h4 class="text-slate-100 font-bold mb-3">Contact & Liens</h4>
+                <ul class="space-y-2 text-xs">
+                    <li>📧 <a href="mailto:alexandrecharlier94@gmail.com" class="hover:text-emerald-400 transition-colors">alexandrecharlier94@gmail.com</a></li>
+                    <li>📍 <span>Lançon-Provence (13680)</span></li>
+                    <li>🐙 <a href="https://github.com/Alexandre-ynov" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors">GitHub (Alexandre-ynov)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-slate-900 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500">
+            <p>© 2026 Alexandre Charlier. Tous droits réservés.</p>
+            <p class="mt-2 md:mt-0 font-mono">Conçu en PHP MVC Native & Tailwind CSS (Option B Minimalist)</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- JS principal -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
