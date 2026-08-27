@@ -1,6 +1,6 @@
 # 🚀 Portfolio Alexandre CHARLIER - Data Science, IA & Software Engineering
 
-> **Site Web en Ligne (GitHub Pages) :** [https://alexandre-ynov.github.io/Alexandre_CHARLIER_Portefolio/docs/](https://alexandre-ynov.github.io/Alexandre_CHARLIER_Portefolio/docs/)
+> **Site Web en Ligne (GitHub Pages) :** [https://alexandre-ynov.github.io/Alexandre_CHARLIER_Portefolio/](https://alexandre-ynov.github.io/Alexandre_CHARLIER_Portefolio/)
 
 Bienvenue sur le dépôt du portfolio d'**Alexandre CHARLIER**, étudiant en 3ème année de Bachelor Informatique (Majeure IA & Data Science) chez **Ynov Aix-en-Provence**.
 
