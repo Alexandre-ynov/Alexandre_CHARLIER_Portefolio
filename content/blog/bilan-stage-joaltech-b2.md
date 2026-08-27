@@ -5,7 +5,7 @@ date: "2026-08-27"
 author: Alexandre CHARLIER
 tags: [Stage B2, Data Engineering, Python, Spark, Kafka, Docker]
 summary: "Retour d'expérience sur mes 5 semaines de stage chez JOALTECH. Au programme : migration d'une architecture d'ingestion de données de Goblin vers Spark pour la Wikimedia Foundation."
-read_time: "5 min"
+read_time: "15 min"
 ---
 
 Dans le cadre de ma deuxième année de Bachelor Informatique (B2), j'ai eu l'opportunité d'effectuer un stage de fin d'année particulièrement formateur au sein de la société **[JOALTECH](http://joaltech.com)**. À l'aube de ma spécialisation en Data Science & IA, cette expérience m'a plongé au cœur des problématiques réelles d'ingénierie de la donnée à grande échelle.
